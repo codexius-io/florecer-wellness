@@ -1,0 +1,168 @@
+:root {
+  --terracotta: #C96B4B;
+  --deep-rust: #8B3A2E;
+  --sage: #A8B89A;
+  --olive: #7A8660;
+  --cream: #FAF5EE;
+  --beige: #E6D7C3;
+}
+
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--cream);
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* HERO BANNER */
+.hero-banner {
+  height: 90vh;
+  background-image: url("./images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.4);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.brand-top {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero-banner h1 {
+  font-size: 72px;
+  margin: 0;
+}
+
+.hero-banner p {
+  font-size: 20px;
+  margin: 10px 0 20px;
+}
+
+/* BUTTON */
+.btn {
+  background: var(--terracotta);
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* SERVICES */
+.services-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 42px;
+  color: var(--deep-rust);
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* SERVICE CARDS */
+.service-card {
+  width: 320px;
+  height: 420px;
+  border: 2px solid var(--sage);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* BACKGROUND IMAGES */
+.group {
+  background-image: url("images/group.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.private {
+  background-image: url("images/private.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.events {
+  background-image: url("images/events.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* CARD TEXT */
+.service-overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(250,245,238,0.92);
+  width: 100%;
+  padding: 20px;
+}
+
+/* CONTACT STRIP */
+.contact-strip {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  border-top: 2px solid var(--beige);
+}
+
+/* CLICKABLE EMAIL + LOCATION BOX */
+.contact-box {
+  border: 2px solid var(--olive);
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--deep-rust);
+  transition: 0.3s ease;
+}
+
+/* hover effect */
+.contact-box:hover {
+  background: var(--sage);
+  color: white;
+  transform: translateY(-2px);
+}
