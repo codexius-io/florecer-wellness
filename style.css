@@ -1,0 +1,806 @@
+:root {
+  --cream: #f8f1e8;
+  --warm: #efe1cf;
+  --sand: #d9bea2;
+  --terracotta: #c95f3f;
+  --terracotta-dark: #9f3f32;
+  --wine: #74302e;
+  --text: #352825;
+  --muted: #766661;
+  --white: #fffaf5;
+  --shadow: 0 24px 70px rgba(80, 45, 31, 0.14);
+  --radius: 26px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 88px;
+  padding: 0 6%;
+  background: rgba(248, 241, 232, 0.92);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(116, 48, 46, 0.1);
+}
+
+.logo img {
+  width: 72px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-weight: 700;
+  color: var(--wine);
+}
+
+.nav a {
+  transition: 0.25s ease;
+}
+
+.nav a:hover {
+  color: var(--terracotta);
+}
+
+.nav-btn,
+.btn.primary {
+  background: var(--terracotta);
+  color: white;
+  padding: 13px 24px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(201, 95, 63, 0.25);
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: none;
+  color: var(--wine);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 88px);
+  background:
+    linear-gradient(rgba(53, 40, 37, 0.18), rgba(53, 40, 37, 0.38)),
+    url("images/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8% 6%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0.05), rgba(0,0,0,0.35));
+}
+
+.hero-content {
+  position: relative;
+  max-width: 1100px;
+  color: white;
+}
+
+.eyebrow {
+  color: var(--terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.offerings .eyebrow,
+.calendar-section .eyebrow,
+.mission .eyebrow,
+.about .eyebrow,
+.inquiry-section .eyebrow,
+.contact .eyebrow{
+  font-size: 1rem;
+  letter-spacing: 0.22em;
+}
+
+.calendar-section .eyebrow {
+  font-size: 1rem;
+  letter-spacing: 0.22em;
+}
+
+.hero .eyebrow {
+  color: #ffd8c9;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  line-height: 1;
+  color: var(--wine);
+}
+
+.hero h1 {
+  color: white;
+  font-size: clamp(3.2rem, 8vw, 8rem);
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.hero-text {
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  max-width: 700px;
+  margin: 0 auto 34px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 800;
+  border-radius: 14px;
+  padding: 14px 26px;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn.secondary {
+  background: rgba(255, 250, 245, 0.92);
+  color: var(--wine);
+}
+
+.section,
+.calendar-section,
+.inquiry-section {
+  padding: 115px 6%;
+}
+
+.section-grid {
+  max-width: 1320px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.section-grid.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.image-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--white);
+}
+
+.image-card img {
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.mission .image-card img {
+  height: 650px;
+  object-fit: cover;
+  object-position: 30%center;
+  background: var(--white);
+}
+
+.founder-card img {
+  height: 620px;
+  object-position: top center;
+}
+
+.section-copy h2,
+.section-heading h2,
+.contact-card h2 {
+  font-size: clamp(3rem, 5.8vw, 5.25rem);
+  margin-bottom: 24px;
+}
+
+.section-copy p,
+.section-subtext {
+  color: var(--muted);
+  font-size: 1.08rem;
+  margin-bottom: 16px;
+}
+
+.offerings {
+  background: linear-gradient(180deg, var(--warm), var(--cream));
+}
+
+.section-heading {
+  max-width: 900px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.cards {
+  max-width: 1320px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.offer-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+  color: inherit;
+  cursor: pointer;
+  min-height: 100%;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+}
+
+.offer-card img {
+  height: 340px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.offer-card div {
+  padding: 32px;
+}
+
+.offer-card h3 {
+  font-size: 2.25rem;
+  margin-bottom: 14px;
+}
+
+.offer-card p {
+  color: var(--muted);
+}
+
+.offer-card span {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--terracotta);
+  font-weight: 800;
+}
+
+.calendar-section {
+  background: var(--cream);
+}
+
+.calendar-layout {
+  max-width: 1320px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.calendar-card,
+.event-list-card,
+.inquiry-form {
+  background: var(--white);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: 34px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.calendar-header h3,
+.event-list-card h3,
+.inquiry-form h3 {
+  font-size: 2.25rem;
+}
+
+.calendar-header button {
+  border: none;
+  background: var(--terracotta);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.9rem;
+  cursor: pointer;
+}
+
+.calendar-days,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-days span {
+  text-align: center;
+  font-weight: 800;
+  color: var(--wine);
+  font-size: 0.85rem;
+}
+
+.calendar-day {
+  min-height: 86px;
+  border: 1px solid rgba(116, 48, 46, 0.12);
+  border-radius: 16px;
+  padding: 10px;
+  background: #fffdf9;
+  cursor: pointer;
+  transition: 0.25s ease;
+  text-align: left;
+  font-family: inherit;
+  color: var(--text);
+}
+
+.calendar-day:hover {
+  background: var(--warm);
+}
+
+.calendar-day.empty {
+  visibility: hidden;
+}
+
+.calendar-day.has-event {
+  border-color: var(--terracotta);
+  background: #fff3ea;
+}
+
+.calendar-day.selected {
+  background: var(--wine);
+  color: white;
+}
+
+.event-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: var(--terracotta);
+  border-radius: 50%;
+  margin-top: 8px;
+}
+
+.event-item {
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--cream);
+  margin-top: 14px;
+}
+
+.event-item strong {
+  color: var(--wine);
+}
+
+.event-item a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--terracotta);
+  font-weight: 800;
+}
+
+.quote-banner {
+  padding: 105px 6%;
+  text-align: center;
+  background: var(--wine);
+  color: white;
+}
+
+.quote-banner p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.quote-banner h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.6rem, 4.5vw, 4.4rem);
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  margin-top: 0;
+}
+
+.inquiry-section {
+  background: linear-gradient(180deg, var(--warm), var(--cream));
+}
+
+.single-form-wrap {
+  max-width: 950px;
+  margin: auto;
+}
+
+.wide-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.inquiry-form label {
+  display: block;
+  color: var(--wine);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.inquiry-form input,
+.inquiry-form textarea,
+.inquiry-form select {
+  width: 100%;
+  border: 1px solid rgba(116, 48, 46, 0.16);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-family: inherit;
+  background: #fffdf9;
+  color: var(--text);
+}
+
+.inquiry-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.inquiry-form button {
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  background: var(--terracotta);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-size: 1rem;
+}
+
+.inquiry-form button:hover {
+  background: var(--terracotta-dark);
+}
+
+.contact {
+  padding-top: 105px;
+}
+
+.contact-card {
+  max-width: 1320px;
+  margin: auto;
+  background: var(--wine);
+  color: white;
+  border-radius: 34px;
+  padding: 64px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 44px;
+  box-shadow: var(--shadow);
+}
+
+.contact-card h2,
+.contact-card .eyebrow {
+  color: white;
+}
+
+.contact-card p {
+  color: rgba(255,255,255,0.78);
+}
+
+.contact-info {
+  display: grid;
+  gap: 16px;
+  align-content: center;
+}
+
+.contact-info a,
+.contact-info p {
+  background: rgba(255,255,255,0.1);
+  padding: 16px 18px;
+  border-radius: 14px;
+  color: white;
+}
+
+.footer {
+  padding: 56px 6%;
+  text-align: center;
+  color: var(--muted);
+}
+
+.footer img {
+  width: 74px;
+  margin: 0 auto 16px;
+}
+
+/* Premium polish */
+.section,
+.calendar-section,
+.inquiry-section,
+.quote-banner {
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-card img,
+.offer-card img {
+  transition: transform 0.6s ease;
+}
+
+.image-card:hover img,
+.offer-card:hover img {
+  transform: scale(1.04);
+}
+
+.inquiry-form input:focus,
+.inquiry-form textarea:focus,
+.inquiry-form select:focus {
+  outline: none;
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 4px rgba(201, 95, 63, 0.12);
+}
+
+.calendar-day.today {
+  border: 2px solid var(--wine);
+}
+
+.calendar-day.today strong::after {
+  content: " today";
+  color: var(--terracotta);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* ---------- FINAL CTA ---------- */
+
+.final-cta {
+  padding: 140px 6%;
+  background:
+    radial-gradient(circle at top, #ffffff 0%, transparent 45%),
+    linear-gradient(180deg, #faf3eb, #efdcca);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.final-cta .eyebrow {
+  font-size: 1rem;
+  letter-spacing: 0.22em;
+}
+
+.final-cta h2 {
+  font-size: clamp(4rem, 7vw, 6.8rem);
+  margin: 20px 0;
+}
+
+.final-cta p:not(.eyebrow) {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 650px;
+  margin: 0 auto 42px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.final-cta .btn {
+  min-width: 240px;
+}
+
+@media (max-width: 520px) {
+  .final-cta {
+    padding: 90px 6%;
+  }
+
+  .final-cta h2 {
+    font-size: 3.4rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav {
+    gap: 18px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 88px;
+    right: 6%;
+    left: 6%;
+    background: var(--white);
+    border-radius: 22px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: var(--shadow);
+    display: none;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .section,
+  .calendar-section,
+  .inquiry-section {
+    padding: 86px 6%;
+  }
+
+  .section-grid,
+  .section-grid.reverse,
+  .cards,
+  .calendar-layout,
+  .contact-card,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .image-card img,
+  .mission .image-card img,
+  .founder-card img {
+    height: 480px;
+  }
+
+  .hero {
+    min-height: 82vh;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    white-space: normal;
+  }
+
+  .calendar-day {
+    min-height: 62px;
+    font-size: 0.85rem;
+  }
+
+  .contact-card {
+    padding: 44px 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  html {
+    scroll-padding-top: 78px;
+  }
+
+  .site-header {
+    height: 78px;
+  }
+
+  .logo img {
+    width: 58px;
+  }
+
+  .nav {
+    top: 78px;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+    white-space: normal;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .section-copy h2,
+  .section-heading h2,
+  .contact-card h2 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .offer-card img {
+    height: 260px;
+  }
+
+  .image-card img,
+  .mission .image-card img,
+  .founder-card img {
+    height: 430px;
+  }
+
+  .calendar-card,
+  .event-list-card,
+  .inquiry-form {
+    padding: 24px;
+  }
+
+  .calendar-days,
+  .calendar-grid {
+    gap: 6px;
+  }
+
+  .calendar-day {
+    min-height: 52px;
+    padding: 7px;
+  }
+
+  .quote-banner h2 {
+    font-size: 3.2rem;
+  }
+}
